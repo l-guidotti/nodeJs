@@ -1,9 +1,9 @@
 # NodeJS
 
 ## Sumário
-- [Introdução](##introducao-ao-repositorio-timerun-e-o-mundo-assincrono-do-nodejs)
-- 
+- [Introdução](##introdução-ao-repositório-timerun-e-o-mundo-assíncrono-do-nodejs)
 
+---
 ## Introdução ao Repositório: Timerun e o Mundo Assíncrono do Node.js
 
 Bem-vindo ao repositório dedicado ao estudo aprofundado do **timerun** no Node.js. Este projeto visa desmistificar e explorar os mecanismos internos que governam o agendamento e a execução de tarefas assíncronas no ambiente Node.js, um aspecto fundamental para qualquer desenvolvedor que busca criar aplicações eficientes, escaláveis e responsivas.
