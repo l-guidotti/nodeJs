@@ -1,9 +1,9 @@
 # NodeJS
 
 ## Sumário
-- [Introdução](##introdução-ao-repositório-timerun-e-o-mundo-assíncrono-do-nodejs)
-- [História do NodeJs](##aa-história-do-nodejs-da-ideia-inovadora-ao-ecossistema-poderoso)
-- [Quem é Ryahn Dahl?](##quem-é-ryan-dahl-o-visionário-por-trás-do-nodejs)
+- [Introdução](#introdução-ao-repositório-timerun-e-o-mundo-assíncrono-do-nodejs)
+- [História do NodeJs](#a-história-do-nodejs-da-ideia-inovadora-ao-ecossistema-poderoso)
+- [Quem é Ryahn Dahl?](#quem-é-ryan-dahl-o-visionário-por-trás-do-nodejs)
 
 ---
 ## Introdução ao Repositório: Timerun e o Mundo Assíncrono do Node.js
@@ -15,6 +15,10 @@ O **Node.js** emergiu como uma das plataformas mais poderosas para o desenvolvim
 No cerne dessa gestão assíncrona está o **Event Loop**, um mecanismo crucial que permite ao Node.js lidar com múltiplas operações simultaneamente sem a necessidade de criar um _thread_ separado para cada uma. Dentro desse Event Loop, os timers (como `setTimeout` e `setInterval`) desempenham um papel vital, agendando funções para serem executadas em um momento futuro. Compreender o **timerun** significa mergulhar nas fases do Event Loop, nas filas de _callbacks_ e na prioridade de execução, desvendando como seu código assíncrono realmente se comporta.
 
 Através deste repositório, você terá a oportunidade de explorar exemplos práticos, diagramas explicativos e análises de código que ilustram o funcionamento do timerun, capacitando-o a escrever código mais robusto, prever o comportamento de suas aplicações e otimizar a performance. Prepare-se para desvendar os segredos por trás da magia assíncrona do Node.js!
+
+[Voltar ao topo](#sumário)
+
+---
 
 ## A História do Node.js: Da Ideia Inovadora ao Ecossistema Poderoso
 
@@ -55,6 +59,10 @@ Desde então, o Node.js solidificou sua posição como uma das tecnologias mais 
 
 A história do Node.js é um testemunho do poder da inovação, da colaboração da comunidade e da capacidade de se adaptar e evoluir. De uma ideia singular para solucionar um problema de I/O, ele se transformou em um pilar fundamental da internet moderna, impulsionando desde pequenas aplicações até os maiores sistemas distribuídos do mundo.
 
+[Voltar ao topo](#sumário)
+
+---
+
 ## Quem é Ryan Dahl? O Visionário Por Trás do Node.js
 
 Por trás de toda grande inovação, há uma mente criativa, e no caso do **Node.js**, essa mente pertence a **Ryan Dahl**. Nascido em 1981, Dahl é um engenheiro de software americano que se tornou uma figura proeminente no universo do desenvolvimento web por suas contribuições revolucionárias.
@@ -70,3 +78,5 @@ Após dedicar-se intensamente ao Node.js por alguns anos, Dahl anunciou em 2012 
 Anos depois, em 2018, Ryan Dahl apresentou outro runtime JavaScript/TypeScript: o Deno. Criado com a intenção de corrigir algumas das "decepções" que ele tinha com o Node.js original, o Deno oferece um ambiente com foco maior em segurança e modularidade, utilizando Rust em sua base e suportando TypeScript nativamente.
 
 Hoje, Ryan Dahl continua ativo na comunidade de desenvolvimento, sendo CEO da Deno Land Inc. Ele é reconhecido como um pensador inovador que não tem medo de desafiar o status quo e repensar fundamentalmente como as aplicações são construídas. Sua influência no cenário da programação é inegável, tendo moldado significativamente o caminho do desenvolvimento web moderno.
+
+[Voltar ao topo](#sumário)
