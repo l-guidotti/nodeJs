@@ -2,6 +2,8 @@
 
 ## Sumário
 - [Introdução](##introdução-ao-repositório-timerun-e-o-mundo-assíncrono-do-nodejs)
+- [História do NodeJs](##aa-história-do-nodejs-da-ideia-inovadora-ao-ecossistema-poderoso)
+- [Quem é Ryahn Dahl?](##quem-é-ryan-dahl-o-visionário-por-trás-do-nodejs)
 
 ---
 ## Introdução ao Repositório: Timerun e o Mundo Assíncrono do Node.js
@@ -53,3 +55,18 @@ Desde então, o Node.js solidificou sua posição como uma das tecnologias mais 
 
 A história do Node.js é um testemunho do poder da inovação, da colaboração da comunidade e da capacidade de se adaptar e evoluir. De uma ideia singular para solucionar um problema de I/O, ele se transformou em um pilar fundamental da internet moderna, impulsionando desde pequenas aplicações até os maiores sistemas distribuídos do mundo.
 
+## Quem é Ryan Dahl? O Visionário Por Trás do Node.js
+
+Por trás de toda grande inovação, há uma mente criativa, e no caso do **Node.js**, essa mente pertence a **Ryan Dahl**. Nascido em 1981, Dahl é um engenheiro de software americano que se tornou uma figura proeminente no universo do desenvolvimento web por suas contribuições revolucionárias.
+
+Sua jornada não começou diretamente com o Node.js. Antes de mergulhar no mundo do JavaScript e do desenvolvimento de servidores, Dahl estudou **matemática** em universidades como a Universidade da Califórnia em San Diego e a Universidade de Rochester. Ele chegou a cursar um doutorado, mas acabou desistindo, buscando uma aplicação mais prática para seus conhecimentos. Foi nesse período que ele se aventurou no desenvolvimento de aplicações web usando **Ruby**.
+
+A grande virada aconteceu em **2009**. Ryan Dahl, frustrado com a forma como os servidores web tradicionais lidavam com operações de entrada e saída (I/O) de forma bloqueante – o que significava que um servidor precisava esperar uma operação ser concluída antes de iniciar a próxima – começou a buscar uma alternativa. Ele vislumbrava um ambiente onde as operações pudessem ser executadas de maneira **assíncrona e não bloqueante**, permitindo que o servidor processasse muito mais conexões simultaneamente sem gargalos.
+
+A solução que ele idealizou combinava o motor **V8 do Google Chrome** (que executa JavaScript de forma extremamente rápida) com um modelo de I/O orientado a eventos. O resultado foi o **Node.js**, lançado oficialmente em 27 de maio de 2009. Sua visão era permitir que desenvolvedores construíssem aplicações de rede escaláveis utilizando a mesma linguagem (JavaScript) tanto no frontend quanto no backend, simplificando o processo e tornando-o mais eficiente.
+
+Após dedicar-se intensamente ao Node.js por alguns anos, Dahl anunciou em 2012 que se afastaria do desenvolvimento diário do projeto, passando a gestão operacional para Isaac Schlueter, criador do NPM (Node Package Manager). Sua motivação era explorar novos projetos de pesquisa e desenvolvimento.
+
+Anos depois, em 2018, Ryan Dahl apresentou outro runtime JavaScript/TypeScript: o Deno. Criado com a intenção de corrigir algumas das "decepções" que ele tinha com o Node.js original, o Deno oferece um ambiente com foco maior em segurança e modularidade, utilizando Rust em sua base e suportando TypeScript nativamente.
+
+Hoje, Ryan Dahl continua ativo na comunidade de desenvolvimento, sendo CEO da Deno Land Inc. Ele é reconhecido como um pensador inovador que não tem medo de desafiar o status quo e repensar fundamentalmente como as aplicações são construídas. Sua influência no cenário da programação é inegável, tendo moldado significativamente o caminho do desenvolvimento web moderno.
