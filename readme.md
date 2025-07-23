@@ -80,3 +80,109 @@ Anos depois, em 2018, Ryan Dahl apresentou outro runtime JavaScript/TypeScript: 
 Hoje, Ryan Dahl continua ativo na comunidade de desenvolvimento, sendo CEO da Deno Land Inc. Ele é reconhecido como um pensador inovador que não tem medo de desafiar o status quo e repensar fundamentalmente como as aplicações são construídas. Sua influência no cenário da programação é inegável, tendo moldado significativamente o caminho do desenvolvimento web moderno.
 
 [Voltar ao topo](#sumário)
+
+---
+
+# Como Instalar e Utilizar o Node.js
+
+Agora que já exploramos a história, os conceitos fundamentais e o visionário por trás do Node.js, é hora de colocar a mão na massa! Para começar a desvendar o timerun e construir suas próprias aplicações assíncronas, o primeiro passo é instalar o Node.js em sua máquina.
+
+A instalação do Node.js é um processo simples e direto, e existem algumas maneiras recomendadas para garantir que você tenha a versão correta e possa gerenciá-la eficientemente.
+
+### Escolhendo a Versão do Node.js
+Antes de instalar, é importante saber que o Node.js segue um ciclo de lançamento que inclui versões LTS (Long Term Support) e versões Current (mais recentes):
+
+* LTS (Long Term Support): São versões estáveis, testadas e recomendadas para a maioria dos ambientes de produção. Elas recebem suporte e atualizações por um período mais longo, garantindo maior estabilidade e menos surpresas. Para a maioria dos projetos, especialmente se você está começando, esta é a versão altamente recomendada.
+
+* Current: Contêm os recursos mais recentes e as últimas melhorias. São ótimas para experimentar novas funcionalidades, mas podem não ser tão estáveis quanto as versões LTS e têm um ciclo de vida mais curto.
+
+Sempre que possível, opte pela versão LTS, a menos que você tenha uma necessidade específica para os recursos da versão Current.
+
+### Métodos de Instalação
+Existem algumas formas principais de instalar o Node.js, dependendo do seu sistema operacional e da sua preferência:
+
+**A) Usando o Instalador Oficial (Recomendado para Iniciantes)**
+
+Este é o método mais fácil e recomendado para a maioria dos usuários, especialmente para quem está começando.
+
+1. Baixe o Instalador: Acesse o site oficial do Node.js: [nodejs.org](www.nodejs.org)
+
+2. Você verá duas opções principais para download: uma para a versão LTS (recomendada) e outra para a versão Current. Clique na versão LTS.
+
+3. O site detectará seu sistema operacional (Windows, macOS ou Linux) e oferecerá o instalador apropriado (`.msi` para Windows, `.pkg` para macOS, etc.).
+
+4. Execute o Instalador:
+
+* Windows/macOS: Dê um clique duplo no arquivo baixado e siga as instruções do assistente de instalação. Geralmente, basta clicar em "Next" (Próximo) e aceitar os termos. O instalador cuidará de adicionar o Node.js e o NPM (Node Package Manager) ao seu PATH do sistema, o que é crucial para usar os comandos no terminal.
+
+* Linux: Para usuários Linux, o site também fornece instruções para usar o gerenciador de pacotes da sua distribuição (como `apt` para Debian/Ubuntu ou `yum`/`dnf` para Red Hat/Fedora).
+
+**B) Usando um Gerenciador de Versões (Recomendado para Desenvolvedores)**
+
+Para desenvolvedores que trabalham com múltiplos projetos e que precisam alternar entre diferentes versões do Node.js (por exemplo, um projeto antigo que usa Node 14 e um novo que usa Node 20), um gerenciador de versões é indispensável.
+
+* NVM (Node Version Manager): É a ferramenta mais popular para isso, disponível para macOS e Linux (existe uma versão similar para Windows chamada `nvm-windows`).
+
+1. Instale o NVM: Siga as instruções no repositório oficial do NVM no GitHub ([github.com/nvm-sh/nvm](www.github.com/nvm-sh/nvm)). Geralmente, é um comando curl ou wget.
+
+2. Instale uma Versão do Node.js:
+
+* Para instalar a última versão LTS: `nvm install --lts`
+
+* Para instalar uma versão específica (e.g., Node 20): `nvm install 20`
+
+3. Usar uma Versão: `nvm use 20` (para usar a versão 20)
+
+4. Definir Versão Padrão: `nvm alias default 20` (para que a versão 20 seja a padrão ao abrir um novo terminal)
+
+**C) Usando Gerenciadores de Pacotes de OS (Linux/macOS)**
+
+Alguns sistemas operacionais permitem instalar o Node.js através de seus próprios gerenciadores de pacotes, mas nem sempre oferecem as versões mais recentes ou a flexibilidade do NVM.
+
+* Linux (Debian/Ubuntu): `sudo apt install nodejs npm` (Verifique qual versão é instalada, pois pode não ser a LTS mais recente).
+
+* macOS (Homebrew): `brew install node`
+
+### Verificando a Instalação
+Após a instalação, é crucial verificar se o Node.js e o NPM foram instalados corretamente e estão acessíveis no seu terminal.
+
+Abra seu terminal ou prompt de comando (PowerShell no Windows, Terminal no macOS/Linux).
+
+Digite os seguintes comandos:
+
+```
+node -v
+npm -v
+```
+Você deverá ver os números das versões do Node.js e do NPM, respectivamente. Por exemplo:
+
+```
+v20.11.0  # Versão do Node.js (pode variar)
+10.2.4    # Versão do NPM (pode variar)
+```
+Se você vir os números das versões, parabéns! O Node.js está pronto para ser usado em sua máquina.
+
+### Seu Primeiro Programa Node.js
+Agora que tudo está configurado, vamos criar um programa Node.js simples:
+
+1. Crie um novo arquivo chamado app.js (ou qualquer outro nome com extensão .js) em qualquer diretório.
+
+2. Abra este arquivo em seu editor de código favorito e adicione o seguinte código:
+
+<pre><code>```javascript console.log("Olá, Node.js! Você está pronto para o timerun!");```</code></pre>
+
+3. Salve o arquivo.
+
+4. Abra seu terminal, navegue até o diretório onde você salvou `app.js` e execute o comando:
+
+```
+node app.js
+```
+
+Você deverá ver a mensagem "Olá, Node.js! Você está pronto para o timerun!" sendo impressa no terminal.
+
+Com o Node.js instalado e funcionando, você está pronto para começar a explorar o timerun e entender a fundo como o Event Loop e os timers orquestram a magia assíncrona. O próximo passo será mergulhar nas fases do Event Loop, que é a base para compreender a execução de código no Node.js.
+
+[Voltar ao topo](#sumário)
+
+---
