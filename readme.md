@@ -1,4 +1,6 @@
-# NodeJS
+![logo-nodejs](images/node.jpeg)
+
+<h1 align="center">Node.JS</h1>
 
 ## Sumário
 - [Introdução](#introdução-ao-repositório-timerun-e-o-mundo-assíncrono-do-nodejs)
