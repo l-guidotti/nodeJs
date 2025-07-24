@@ -26,7 +26,7 @@ Através deste repositório, você terá a oportunidade de explorar exemplos pr�
 
 ## A História do Node.js: Da Ideia Inovadora ao Ecossistema Poderoso
 
-O Node.js, hoje uma ferramenta indispensável no desenvolvimento web, tem uma história relativamente recente, mas repleta de inovações que mudaram a forma como construímos aplicações. Sua jornada começou com uma ideia ousada de Ryan Dahl em 2009, que buscava solucionar um problema fundamental: a ineficiência dos servidores web tradicionais em lidar com múltiplas conexões simultâneas.
+O Node.js, hoje uma ferramenta indispensável no desenvolvimento web, tem uma história relativamente recente, mas repleta de inovações que mudaram a forma como construímos aplicações. Sua jornada começou com uma ideia ousada de [Ryan Dahl](#quem-é-ryan-dahl-o-visionário-por-trás-do-nodejs) em **2009**, que buscava solucionar um problema fundamental: a ineficiência dos servidores web tradicionais em lidar com múltiplas conexões simultâneas.
 
  ### O Nascimento da Ideia (2009)
  
@@ -87,7 +87,7 @@ Hoje, Ryan Dahl continua ativo na comunidade de desenvolvimento, sendo CEO da De
 
 ---
 
-# Como Instalar e Utilizar o Node.js
+## Como Instalar e Utilizar o Node.js
 
 Agora que já exploramos a história, os conceitos fundamentais e o visionário por trás do Node.js, é hora de colocar a mão na massa! Para começar a desvendar o timerun e construir suas próprias aplicações assíncronas, o primeiro passo é instalar o Node.js em sua máquina.
 
@@ -154,13 +154,13 @@ Abra seu terminal ou prompt de comando (PowerShell no Windows, Terminal no macOS
 
 Digite os seguintes comandos:
 
-```
+```bash
 node -v
 npm -v
 ```
 Você deverá ver os números das versões do Node.js e do NPM, respectivamente. Por exemplo:
 
-```
+```bash
 v20.11.0  # Versão do Node.js (pode variar)
 10.2.4    # Versão do NPM (pode variar)
 ```
@@ -173,14 +173,15 @@ Agora que tudo está configurado, vamos criar um programa Node.js simples:
 
 2. Abra este arquivo em seu editor de código favorito e adicione o seguinte código:
 
-<pre><code>javascript 
-console.log("Olá, Node.js! Você está pronto para o timerun!");</code></pre>
+```javascript 
+console.log("Olá, Node.js! Você está pronto para o timerun!");
+```
 
 3. Salve o arquivo.
 
 4. Abra seu terminal, navegue até o diretório onde você salvou `app.js` e execute o comando:
 
-```
+```bash
 node app.js
 ```
 
@@ -192,7 +193,7 @@ Com o Node.js instalado e funcionando, você está pronto para começar a explor
 
 ---
 
-# Como Funciona o package.json no Node.js
+## Como Funciona o package.json no Node.js
 
 Você já tem o Node.js instalado e pronto para rodar seus primeiros códigos, o que é um grande passo! Agora, para organizar e gerenciar seus projetos Node.js de forma eficiente, você vai precisar entender o `package.json`. Este arquivo é o coração de qualquer projeto Node.js e NPM (Node Package Manager), funcionando como um manifesto que descreve seu projeto e suas dependências.
 
@@ -209,7 +210,7 @@ O `package.json` é um arquivo JSON (JavaScript Object Notation) que fica na rai
 
 Vamos ver um exemplo simples de como um `package.json` pode se parecer:
 
-```
+```JavaScript
 {
   "name": "meu-primeiro-projeto-node",
   "version": "1.0.0",
@@ -320,3 +321,13 @@ Entender o `package.json` é um passo fundamental para trabalhar com Node.js de 
 [Voltar ao topo](#sumário)
 
 ---
+
+## Explorando as Fases do Event Loop no Node.js
+
+O **Event Loop** é, sem dúvida, o conceito mais crucial para qualquer pessoa que queira realmente dominar o Node.js e, especialmente, entender o **timerun**. É aqui que a mágica da assincronicidade acontece.
+
+Imagine o Event Loop como um **único thread de execução** que está constantemente observando e processando tarefas. Diferente de outras linguagens que usam múltiplos threads para lidar com operações concorrentes, o Node.js opera em um single-thread principal, mas consegue ser altamente eficiente graças ao seu modelo de I/O não bloqueante e ao Event Loop.
+
+Quando o Node.js inicia, ele inicializa o Event Loop e começa a executar o código síncrono do seu programa. Qualquer operação assíncrona (como I/O de rede, leitura de arquivos ou, claro, **timers**) é "descarregada" para o kernel do sistema operacional ou para um thread pool interno (do `libuv`, uma biblioteca C++ que o Node.js usa). Uma vez que essas operações assíncronas são concluídas, elas notificam o Event Loop, que então enfileira os callbacks associados para serem executados.
+
+O Event Loop não é um loop infinito simples. Ele é estruturado em fases distintas, cada uma responsável por um tipo específico de callback. O Node.js se move entre essas fases em um ciclo contínuo, processando as filas de callbacks em cada uma delas.
