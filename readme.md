@@ -8,6 +8,8 @@
 - [Quem é Ryahn Dahl?](#quem-é-ryan-dahl-o-visionário-por-trás-do-nodejs)
 - [Como Instalar e Utilizar o Node.js](#como-instalar-e-utilizar-o-nodejs)
 - [Como Funciona o package.json no Node.js](#como-funciona-o-packagejson-no-nodejs)
+- [Entendendo a Pasta src em um Projeto Node.js](#entendendo-a-pasta-src-em-um-projeto-nodejs)
+- [Explorando as Fases do Event Loop no Node.js](#explorando-as-fases-do-event-loop-no-nodejs)
 
 ---
 ## Introdução ao Repositório: Timerun e o Mundo Assíncrono do Node.js
@@ -322,6 +324,106 @@ Entender o `package.json` é um passo fundamental para trabalhar com Node.js de 
 
 ---
 
+## Entendendo a Pasta src em um Projeto Node.js
+
+É fundamental não apenas entender os conceitos técnicos do Node.js, como o Event Loop e os timers, mas também as **convenções** e **melhores práticas** que tornam um projeto organizado e sustentável. A pasta `src` é um exemplo clássico disso.
+
+### O Que é a Pasta src?
+
+No universo do desenvolvimento de software, a pasta `src` (abreviação de "**source**" ou "**código-fonte**") é uma convenção comum e largamente adotada para abrigar o código-fonte principal da sua aplicação. Embora o Node.js não a imponha por padrão (você pode colocar seus arquivos `.js` diretamente na raiz do projeto), utilizá-la é uma prática altamente recomendada.
+
+### Por Que Usar a Pasta src?
+
+A adoção da pasta src traz diversos benefícios para a organização e manutenção do seu projeto Node.js:
+
+1. Organização e Clareza:
+
+* Mantém o código-fonte da aplicação separado de outros arquivos do projeto, como configurações, documentação, assets estáticos, testes (`test` ou `__tests__`), arquivos de build (`dist` ou `build`), e as dependências (`node_modules`).
+
+* Facilita a localização dos arquivos principais da sua lógica de negócio. Quando alguém (ou você mesmo no futuro) abre o projeto, sabe imediatamente onde procurar o código central.
+
+2. Padronização e Colaboração:
+
+* É uma convenção universal em muitas linguagens e *frameworks* (não apenas Node.js), o que facilita a colaboração em equipes. Desenvolvedores familiarizados com outras tecnologias se sentirão à vontade rapidamente.
+
+* Melhora a legibilidade para qualquer pessoa que navegue pelo seu repositório.
+
+3. Processos de Build e Implantação:
+
+* Em projetos mais complexos que envolvem transpilação (e.g., de TypeScript para JavaScript), bundling (juntar vários arquivos em um só) ou outros processos de `build`, a pasta `src` serve como o ponto de partida claro para essas operações. O resultado final compilado pode ser enviado para uma pasta `dist` ou `build`, mantendo o `src` limpo e apenas com o código-fonte original.
+
+* Ajuda a definir regras em arquivos como `.gitignore` (para ignorar arquivos que não devem ir para o controle de versão) e configurações de deploy.
+
+4. Separação de Preocupações:
+
+* Reforça a ideia de que o diretório raiz do projeto deve conter arquivos de configuração, scripts de inicialização, e documentação, enquanto a lógica de negócio reside na pasta `src`.
+
+### Como Estruturar o Conteúdo Dentro de `src`?
+
+A estrutura interna da pasta src dependerá da complexidade e do tamanho do seu projeto, mas algumas convenções são comuns:
+
+```bash
+/seu-projeto
+├── node_modules/
+├── src/
+│   ├── controllers/    # Lógica de controle (ex: lida com requisições HTTP)
+│   ├── services/       # Lógica de negócio (ex: regras de negócio, interações com DB)
+│   ├── models/         # Definições de modelos de dados (ex: esquemas de DB)
+│   ├── routes/         # Definição de rotas da API
+│   ├── utils/          # Funções utilitárias reutilizáveis
+│   ├── config/         # Configurações específicas da aplicação
+│   ├── middlewares/    # Funções de middleware para Express, etc.
+│   └── app.js          # Arquivo principal da aplicação (ou index.js)
+├── public/             # Arquivos estáticos (HTML, CSS, imagens) se houver frontend
+├── tests/              # Testes unitários e de integração
+├── .env                # Variáveis de ambiente
+├── .gitignore          # Arquivo para controle de versão
+├── package.json
+├── package-lock.json
+└── README.md
+```
+
+No exemplo acima, `app.js` (ou `index.js`) dentro de `src` seria o arquivo que o campo `"main"` no seu `package.json` apontaria, ou que você executaria com `node src/app.js` (ou `npm start` se o script estiver configurado).
+
+### Criando sua Pasta `src`
+
+Para começar a usar a pasta `src` no seu projeto:
+
+1. Crie a pasta `src` na raiz do seu projeto:
+
+```Bash
+mkdir src
+```
+
+2. Mova seus arquivos JavaScript principais para dentro dela:
+
+```Bash
+mv seu_arquivo_principal.js src/index.js
+```
+
+3. Atualize o campo `"main"` no seu `package.json` para apontar para o novo caminho, se necessário:
+
+```JSON
+"main": "src/index.js",
+```
+
+4. Atualize seus scripts NPM (no campo `"scripts"` do `package.json`) para rodar o arquivo na nova localização:
+
+```JSON
+
+"scripts": {
+  "start": "node src/index.js",
+  "dev": "nodemon src/index.js" // Se estiver usando nodemon
+},
+```
+
+Adotar essa estrutura desde o início, mesmo em projetos pequenos, ajuda a desenvolver bons hábitos de organização que se tornam inestimáveis à medida que seus projetos crescem em complexidade.
+
+
+[Voltar ao topo](#sumário)
+
+---
+
 ## Explorando as Fases do Event Loop no Node.js
 
 O **Event Loop** é, sem dúvida, o conceito mais crucial para qualquer pessoa que queira realmente dominar o Node.js e, especialmente, entender o **timerun**. É aqui que a mágica da assincronicidade acontece.
@@ -331,3 +433,7 @@ Imagine o Event Loop como um **único thread de execução** que está constante
 Quando o Node.js inicia, ele inicializa o Event Loop e começa a executar o código síncrono do seu programa. Qualquer operação assíncrona (como I/O de rede, leitura de arquivos ou, claro, **timers**) é "descarregada" para o kernel do sistema operacional ou para um thread pool interno (do `libuv`, uma biblioteca C++ que o Node.js usa). Uma vez que essas operações assíncronas são concluídas, elas notificam o Event Loop, que então enfileira os callbacks associados para serem executados.
 
 O Event Loop não é um loop infinito simples. Ele é estruturado em fases distintas, cada uma responsável por um tipo específico de callback. O Node.js se move entre essas fases em um ciclo contínuo, processando as filas de callbacks em cada uma delas.
+
+[Voltar ao topo](#sumário)
+
+---
